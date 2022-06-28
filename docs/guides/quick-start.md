@@ -201,6 +201,8 @@ First, the user need to prepare the dataset according to the targeted scenario, 
 /home/ianvs-qs/dataset$ unzip dataset.zip
 ```
 
+The URL address of this dataset then should be filled in the configuration file ``testenv.yaml``. In this quick start, we have done that for you and the interested readers can refer to [testenv.yaml] for more details. 
+
 <!-- Please put the downloaded dataset on the above datset path, e.g., `/home/ianvs-qs/dataset`. One can transfer the dataset to the path, e.g., on a remote Linux system using [XFTP].  -->
 
 
@@ -225,6 +227,7 @@ Related algorithm is also ready as a wheel in this quick start.
 /home/ianvs-qs/project/ianvs$ python -m pip install examples/resources/algorithms/FPN_TensorFlow-0.1-py3-none-any.whl
 ```
 
+The URL address of this algorithm then should be filled in the configuration file ``algorithm.yaml``. In this quick start, we have done that for you and the interested readers can refer to [algorithm.yaml] for more details. 
 
 ## Step 3. Ianvs Execution and Presentation
 
@@ -235,7 +238,9 @@ We are now ready to run the ianvs for benchmarking on PCB-AoI dataset.
 ```
 
 Finally, the user can check the result of benchmarking on the console and also in the output path(e.g. `/ianvs/singletask_learning_bench/workspace`) defined in the
-benchmarking config file (e.g. `benchmarkingjob.yaml`), which might look like:   
+benchmarking config file (e.g. `benchmarkingjob.yaml`). In this quick start, we have done all configurations for you and the interested readers can refer to [benchmarkingJob.yaml] for more details. 
+
+The final output might look like:   
 
 |rank|algorithm              |f1_score          |paradigm          |basemodel|learning_rate|momentum|time               |url                                                                                                  |
 |----|-----------------------|------------------|------------------|---------|-------------|--------|-------------------|-----------------------------------------------------------------------------------------------------|
