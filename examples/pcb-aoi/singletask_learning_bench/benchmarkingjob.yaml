@@ -2,11 +2,11 @@ benchmarkingjob:
   # job name of bechmarking; string type;
   name: "benchmarkingjob"
   # the url address of job workspace that will reserve the output of tests; string type;
-  workspace: "/ianvs/incremental_learning_bench/workspace"
+  workspace: "/ianvs/singletask_learning_bench/workspace"
 
   # the url address of test environment configuration file; string type;
   # the file format supports yaml/yml;
-  testenv: "./examples/pcb-aoi/incremental_learning_bench/testenv/testenv.yaml"
+  testenv: "./examples/pcb-aoi/singletask_learning_bench/testenv/testenv.yaml"
 
   # the configuration of test object
   test_object:
@@ -16,16 +16,16 @@ benchmarkingjob:
     # test algorithm configuration files; list type;
     algorithms:
       # algorithm name; string type;
-      - name: "fpn_incremental_learning"
+      - name: "fpn_singletask_learning"
         # the url address of test algorithm configuration file; string type;
-        # the file format supports yaml/yml
-        url: "./examples/pcb-aoi/incremental_learning_bench/testalgorithms/fpn/fpn_algorithm.yaml"
+        # the file format supports yaml/yml;
+        url: "./examples/pcb-aoi/singletask_learning_bench/testalgorithms/fpn/fpn_algorithm.yaml"
 
   # the configuration of ranking leaderboard
   rank:
     # rank leaderboard with metric of test case's evaluation and order ; list type;
     # the sorting priority is based on the sequence of metrics in the list from front to back;
-    sort_by: [ { "f1_score": "descend" }, { "samples_transfer_ratio": "ascend" } ]
+    sort_by: [ { "f1_score": "descend" } ]
 
     # visualization configuration
     visualization:
@@ -56,10 +56,10 @@ benchmarkingjob:
       hyperparameters: [ "all" ]
       # currently the options of value are as follows:
       #   1> "all": select all metrics in the leaderboard;
-      #   2> metrics in the leaderboard, e.g., "F1_SCORE"
-      metrics: [ "f1_score", "samples_transfer_ratio" ]
+      #   2> metrics in the leaderboard, e.g., "f1_score"
+      metrics: [ "f1_score" ]
 
-    # model of save selected and all dataitems in workspace `./rank` ; string type;
+    # model of save selected and all dataitems in workspace; string type;
     # currently the options of value are as follows:
     #  1> "selected_and_all": save selected and all dataitems;
     #  2> "selected_only": save selected dataitems;
