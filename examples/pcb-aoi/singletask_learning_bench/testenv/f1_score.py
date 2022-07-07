@@ -48,7 +48,7 @@ def f1_score(y_true, y_pred):
     f1_score_avg = 0
     if f1_score_list:
         f1_score_avg = round(float(sum(f1_score_list)) / len(f1_score_list), 4)
-
+        
     print(f"f1_score_avg: {f1_score_avg}")
 
     return f1_score_avg
